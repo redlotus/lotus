@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block head %} 
+{{ super() }} 
+{% for keyword in article.keywords %}
+<meta name="keywords" contents="{{keyword}}" />
+{% endfor %} {% for description in article.description %}
+<meta name="description" contents="{{description}}" />
+{% endfor %} {% for tag in article.tags %}
+<meta name="tags" contents="{{tag}}" />
+{% endfor %} {% endblock %} {% block content %}
+<section id="content" class="uk-article body">
+	<h2 class="uk-article-title">
+		<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+			title="Permalink to {{ article.title|striptags }}">{{
+			article.title }}</a>
+	</h2>
+	<p class="uk-article-meta">Written by {{ article.author }} on {{
+		article.locale_date }}</p>
+	{% if article.modified %}
+	<p class="uk-article-meta">Modified on {{
+		article.modified.locale_date }}</p>
+	{% endif %}
+	<!-- /.post-info -->
+	<div class="entry-content">{{ article.content }}</div>
+	<!-- /.entry-content -->
+</section>
+{% endblock %}
