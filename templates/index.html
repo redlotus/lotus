@@ -1,23 +1,20 @@
 {% extends "base.html" %} {% block content %}
 <section id="content">
-	<ol id="post-list" class="uk-nav">
-		{% for article in articles_page.object_list %}
-		<li><article class="uk-article">
-				<h2 class="uk-article-title">
-					<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-						title="{{ article.title|striptags }}">{{ article.title }}</a>
-				</h2>
-
-				<p class="uk-article-meta">Written by {{ article.author }} on {{
-					article.locale_date }}</p>
-				<!-- /.post-info -->
-				<div class="entry-content">{{ article.summary }}</div>
-				<!-- /.entry-content -->
-				<a href="{{ SITEURL }}/{{ article.url }}">Read more</a>
-			</article></li> {% endfor %}
-	</ol>
+    <p class="intro">all things nerd</p>
+    <div class="list">
+        <p class="fa fa-paper-plane-o"></p>
+	    <ul>
+		    {% for article in articles_page.object_list %}
+		    <li>
+				<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+						title="{{ article.title|striptags }}"><h2>{{ article.title }}</h2>
+						<span>[ {{ article.locale_date }} ]</span>
+				</a>
+            </li> {% endfor %}
+	    </ul>
+	</div>
 	<!-- /#posts-list -->
-	{% include 'pagination.html' %}
+	<!-- {% include 'pagination.html' %} -->
 </section>
 <!-- /#content -->
 {% endblock content %}
