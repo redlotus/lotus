@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<section id="content">
+    <p class="intro">all things nerd</p>
+    <div class="list">
+        <p class="fa fa-paper-plane-o"></p>
+        <ul>
+            {% for article in articles_page.object_list %}
+            <li>
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                                                          title="{{ article.title|striptags }}"><h2>{{ article.title }}</h2>
+                                                          <span>[ {{ article.locale_date }} ]</span>
+                </a>
+            </li> {% endfor %}
+        </ul>
+    </div>
+    <!-- /#posts-list -->
+    <!-- {% include 'pagination.html' %} -->
+</section>
+<!-- /#content -->
+{% endblock content %}

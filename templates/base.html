@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
-<head>
-    {% block head %}
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <link rel="stylesheet" href="blog.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    {% endblock head %}
-</head>
-<body class="body">
-    <div class="header">
-      <div class="navbar">
-        <a href="/" class="fa fa-home" title="home"></a>
-        <a href="pages/about" class="fa fa-user" title="about"></a>
-        <a href="pages/docs" class="fa fa-book" title="docs"></a>
-        <a href="pages/cv" class="fa fa-file-text-o" title="resume"></a>
-		<a href="https://github.com/redlotus" class="fa fa-github" title="github"></a>
-		<a href="https://twitter.com/r3d10tu5" class="fa fa-twitter" title="twitter"></a>
-      </div>
-    </div>
-	<div class="index">
-	{% block content %} {% endblock content %}
-	</div>
-	<div class="footer">
-        <p class="fa fa-angle-double-right"> Keep it simple, stupid</p>
-        <p class="fa fa-angle-double-left"></p>
-    </div>
-</body>
+    <head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        {% endblock head %}
+    </head>
+    <body class="body">
+        <div class="header">
+            <div class="navbar">
+                <a href="{{ SITEURL }}" class="fa fa-home" title="home"></a>
+                <a href="{{ SITEURL }}/pages/about" class="fa fa-user" title="about"></a>
+                <a href="{{ SITEURL }}/pages/docs" class="fa fa-book" title="docs"></a>
+                <a href="{{ SITEURL }}/pages/cv" class="fa fa-file-text-o" title="resume"></a>
+                <a href="https://github.com/redlotus" class="fa fa-github" title="github"></a>
+                <a href="https://twitter.com/r3d10tu5" class="fa fa-twitter" title="twitter"></a>
+            </div>
+        </div>
+        <div class="index">
+            {% block content %} {% endblock content %}
+        </div>
+        <div class="footer">
+            <p class="fa fa-angle-double-right"> Keep it simple, stupid</p>
+            <p class="fa fa-angle-double-left"></p>
+        </div>
+    </body>
 </html>
